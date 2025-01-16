@@ -1,0 +1,8 @@
+[core]
+    remote = storage
+['remote "storage"']
+    url = s3://weather-bucket
+    endpointurl = https://localhost:9000
+    access_key_id = rhO9lTaayoAl1M9CRwhs
+    secret_access_key = WuKA5MFFQa8tHaaX1s7cyga6ig7XolFXVAckBJjJ
+    ssl_verify = false
