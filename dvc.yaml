@@ -14,3 +14,8 @@ stages:
       python src/featurization.py data/prepared data/features
     params:
     - featurize.max_features
+  train:
+    cmd: train.n_est, train.min_split -d src/train.py -d data/features -o model.pkl
+      python src/train.py data/features model.pkl
+    params:
+    - train.seed
