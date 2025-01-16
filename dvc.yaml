@@ -2,10 +2,15 @@ stages:
   prepare:
     cmd: python src/prepare.py data/data.xml
     deps:
-      - data/data.xml
-      - src/prepare.py
+    - data/data.xml
+    - src/prepare.py
     params:
-      - prepare.seed
-      - prepare.split
+    - prepare.seed
+    - prepare.split
     outs:
-      - data/prepared
+    - data/prepared
+  featurize:
+    cmd: featurize.ngrams -d src/featurization.py -d data/prepared -o data/features
+      python src/featurization.py data/prepared data/features
+    params:
+    - featurize.max_features

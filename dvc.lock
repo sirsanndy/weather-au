@@ -5,8 +5,8 @@ stages:
     deps:
     - path: data/data.xml
       hash: md5
-      md5: 22a1a2931c8370d3aeedd7183606fd7f
-      size: 14445097
+      md5: 81ff01496286f6af8da86f5126643daf
+      size: 14452438
       isexec: true
     - path: src/prepare.py
       hash: md5
@@ -20,6 +20,6 @@ stages:
     outs:
     - path: data/prepared
       hash: md5
-      md5: 153aad06d376b6595932470e459ef42a.dir
-      size: 8437363
+      md5: e6e6af4c9f7895ebea2e4b99c09f927b.dir
+      size: 8442796
       nfiles: 2
