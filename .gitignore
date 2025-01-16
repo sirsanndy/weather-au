@@ -1,3 +1,4 @@
 .dvc/config
 .dvc/config
 .dvc/*config
+/model.pkl

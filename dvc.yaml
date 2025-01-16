@@ -10,12 +10,23 @@ stages:
     outs:
     - data/prepared
   featurize:
-    cmd: featurize.ngrams -d src/featurization.py -d data/prepared -o data/features
-      python src/featurization.py data/prepared data/features
+    cmd: python src/featurization.py data/prepared data/features
     params:
     - featurize.max_features
+    - featurize.ngrams
+    deps:
+    - data/prepared
+    - src/featurization.py
+    outs:
+    - data/features
   train:
-    cmd: train.n_est, train.min_split -d src/train.py -d data/features -o model.pkl
-      python src/train.py data/features model.pkl
+    cmd: python src/train.py data/features model.pkl
     params:
+    - train.min_split
+    - train.n_est
     - train.seed
+    deps:
+    - data/features
+    - src/train.py
+    outs:
+    - model.pkl
